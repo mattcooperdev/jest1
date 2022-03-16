@@ -11,29 +11,31 @@ function newGame() {
     game.playerMoves = [];
     showScore();
     addTurn();
-}
+};
 
 function addTurn() {
     game.playerMoves = [];
     game.currentGame.push(game.choices[(Math.floor(Math.random() * 4))]);
-    // showTurns();
+    showTurns();
 }
 
 function showScore() {
     document.getElementById("score").innerText = game.score;   
-}
+};
 
-module.exports = { game, newGame, showScore, addTurn };
-
-
+function lightsOn(circ) {
+    document.getElementById(circ).classList.add("light");
+    setTimeout(() => {
+        document.getElementById(circ).classList.remove("light");
+    }, 400);
+};
 
 function showTurns() {
-
+    
 }
 
-function lightsOn() {
+module.exports = { game, newGame, showScore, addTurn, lightsOn };
 
-}
 
 function playerTurn() {
 
